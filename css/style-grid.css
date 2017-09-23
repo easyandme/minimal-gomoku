@@ -16,7 +16,7 @@
 .cell:before {
     content: '';
     background: #222;
-    width: 100%;
+    width: 102%;
     display: inline-block;
     vertical-align: middle;
     height: 1px;
@@ -60,5 +60,6 @@
     background-size: 10px;
     background-repeat: no-repeat;
     background-position: center;
+    z-index:10;
 }
 
