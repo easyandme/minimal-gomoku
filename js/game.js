@@ -80,6 +80,8 @@ const restart = () => {
     blackPiece = 0
     board_map = new Board()
     step_text.innerText = currentStep
+    undo_btn.disabled = true
+    restart_btn.disabled = true
     Array.prototype.forEach.call(cells, function(cell) {
         if (cell.children.length) cell.removeChild(cell.lastChild)
     })
