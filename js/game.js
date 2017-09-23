@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function() {
             if (board_map.setMap(row, col, color)) {
                 board.removeEventListener('click', placePiece, true)
                 board_active = false
-                message_text.innerText = board_map.getHistory()[board_map.history.length - 1][0] === 0 ? "Black Wins" : "White Wins"
+                message_text.innerText = board_map.getHistory()[board_map.history.length - 1][0] === 0 ? "Black Won" : "White Won"
             }
         }
         if (currentStep > 0) {
