@@ -8,9 +8,57 @@
     padding-top: calc(100% - 2px);
     box-sizing: border-box;
     position: relative;
+    overflow: hidden;
+    background-color: #eae0d3;
+    transition: all 1.5s ease;
+    -webkit-transition: all 1.5s ease;
+}
+.cell:before {
+    content: '';
+    background: #222;
+    width: 100%;
+    display: inline-block;
+    vertical-align: middle;
+    height: 1px;
+    position: absolute;
+    top: 50%;
+}
+.cell:after {
+    content: '';
+    background: #222;
+    width: 100%;
+    display: inline-block;
+    vertical-align: middle;
+    height: 1px;
+    position: absolute;
+    top: 50%;
+    transform: rotate(90deg);
+}
+.cell.top-cell:after {
+    top: 102%;
+}
+.cell.bottom-cell:after {
+    top: -2%;
+}
+.cell.left-cell:before {
+    width: 50%;
+    left: 50%;
+}
+.cell.right-cell:before {
+    width: 50%;
+}
+.loaded {
+    background-color: #fbb35c;
+    border-radius: 50%;
+}
+.cell:hover {
+    background-color: rgba(197, 144, 61, 0.69);
 }
 
 .cell.center-cell {
-    background-color: #fba234;
+    background-image: url('../img/centerdot.png');
+    background-size: 10px;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 

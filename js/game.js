@@ -16,7 +16,6 @@ document.addEventListener("DOMContentLoaded", function() {
     setTimeout(function() {
         cells.forEach((cell) => {
             cell.className += ' loaded'
-            cell.style.borderStyle = 'solid'
         })
     }, 1000)
 
@@ -40,6 +39,7 @@ document.addEventListener("DOMContentLoaded", function() {
         piece.style.left = '50%'
         piece.style.transform = 'translate(-50%, -50%)'
         piece.style.borderRadius = '50%'
+        piece.style.zIndex = 9
         return piece
     }
 
