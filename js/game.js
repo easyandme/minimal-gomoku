@@ -13,9 +13,10 @@ document.addEventListener("DOMContentLoaded", function() {
     let blackPiece = 0, whitePiece = 0
     let currentStep = 0, board_active = true
 
-    window.onload = setTimeout(function() {
+    setTimeout(function() {
         cells.forEach((cell) => {
             cell.className += ' loaded'
+            cell.style.borderStyle = 'solid'
         })
     }, 1000)
 

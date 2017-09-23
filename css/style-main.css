@@ -178,9 +178,12 @@ body {
     max-width: 90vh;
 }
 .cell {
+    border-width: 1px;
+    border-style: dotted;
+    border-color: #808080;
     background-color: #eae0d3;
-    transition: background-color 1.5s;
-    -webkit-transition: background-color 1.5s;
+    transition: all 1.5s ease;
+    -webkit-transition: all 1.5s ease;
 }
 .cell.loaded {
     background-color: #fbb35c;
