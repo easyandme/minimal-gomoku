@@ -8,6 +8,7 @@ const cells = document.querySelectorAll('.cell')
 const undo_btn = document.getElementById('back')
 const restart_btn = document.getElementById('restart')
 const step_text = document.getElementById('step')
+const message_text = document.getElementById('message')
 let board_map = new Board()
 let blackPiece = 0, whitePiece = 0
 let currentStep = 0, board_active = true
@@ -53,6 +54,8 @@ const placePiece = (e) => {
         if (board_map.setMap(row, col, color)) {
             board.removeEventListener('click', placePiece, true)
             board_active = false
+            let text = board_map.history.pop()[0] === 0 ? "Black Wins" : "White Wins"
+            message_text.innerText = text
         }
     }
     if (currentStep > 0) {
@@ -71,10 +74,13 @@ const unplacePiece = () => {
     else whitePiece--
     step_text.innerText = currentStep
     if (currentStep === 0) undo_btn.disabled = true
-    if (board_active === false) board.addEventListener('click', placePiece, true)
+    if (board_active === false) {
+        board.addEventListener('click', placePiece, true)
+        message_text.innerHTML = "&nbsp"
+    }
 }
 
-const restart = () => {
+const restartBoard = () => {
     currentStep = 0
     whitePiece = 0
     blackPiece = 0
@@ -85,9 +91,12 @@ const restart = () => {
     Array.prototype.forEach.call(cells, function(cell) {
         if (cell.children.length) cell.removeChild(cell.lastChild)
     })
-    if (board_active === false) board.addEventListener('click', placePiece, true)
+    if (board_active === false) {
+        board.addEventListener('click', placePiece, true)
+        message_text.innerHTML = "&nbsp"
+    }
 }
 
 board.addEventListener('click', placePiece, true)
 undo_btn.addEventListener('click', unplacePiece, true)
-restart_btn.addEventListener('click', restart, true)
+restart_btn.addEventListener('click', restartBoard, true)
