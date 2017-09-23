@@ -1,0 +1,17 @@
+.board {
+    display: grid;
+    grid-template-columns: repeat(19, 5.263%);
+}
+
+
+.cell {
+    border: 1px solid #808080;
+    padding-top: calc(100% - 2px);
+    box-sizing: border-box;
+    position: relative;
+}
+
+.cell.center-cell {
+    background-color: #fba234;
+}
+

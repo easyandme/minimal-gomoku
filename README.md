@@ -1,0 +1,1 @@
+Gomoku for minimalists.

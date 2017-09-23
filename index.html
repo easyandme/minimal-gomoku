@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gomoku Online</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500" rel="stylesheet">
+    <link rel="stylesheet" href="css/style-main.css" type="text/css" media="all">
+    <link rel="stylesheet" href="css/style-grid.css" type="text/css" media="all">
+    <link rel="stylesheet" href="css/media.css" type="text/css" media="all">
+</head>
+<body>
+
+<div class="content">
+
+<div class="board">
+
+    <!-- row -->
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+
+    <!-- row -->
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+
+    <!-- row -->
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+
+    <!-- row -->
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+
+    <!-- row -->
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+
+    <!-- row -->
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+
+    <!-- row -->
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+
+    <!-- row -->
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+
+    <!-- 9th row -->
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+
+    <!-- center row -->
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell center-cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+
+
+    <!-- 10th row -->
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+
+    <!-- row -->
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+
+    <!-- row -->
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+
+    <!-- row -->
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+
+    <!-- row -->
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+
+    <!-- row -->
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+
+    <!-- row -->
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+
+    <!-- row -->
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+
+    <!-- row -->
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell">
+    </div>
+
+</div>
+    <div class="other">
+        <h3>Steps: <br><span id="step">0</span><br><span id="message">&nbsp;</span></h3>
+        <button id="back" disabled>UNDO</button>
+        <button id="restart" disabled>Restart</button>
+    </div>
+
+</div>
+<script src="js/Board.js"></script>
+<script src="js/game.js"></script>
+</body>
+
+</html>

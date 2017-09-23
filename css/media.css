@@ -1,0 +1,24 @@
+@media only screen and (max-width: 1080px) {
+    h3 {
+        position: relative;
+        top: 0;
+        left: 10vw;
+        display: inline-block;
+    }
+    button#back {
+        position: relative;
+        top: 0;
+        left: 0;
+        display: inline-block;
+        margin-left: 120px;
+        transform: translateY(-30px);
+    }
+    button#restart {
+        position: relative;
+        top: 0;
+        left: 0;
+        display: inline-block;
+        margin-left: 10px;
+        transform: translateY(-30px);
+    }
+}
