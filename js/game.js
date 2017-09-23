@@ -3,6 +3,12 @@
  */
 document.addEventListener("DOMContentLoaded", function() {
 
+    if ('addEventListener' in document) {
+        document.addEventListener('DOMContentLoaded', function() {
+            FastClick.attach(document.body);
+        }, false);
+    }
+
     const board = document.getElementsByClassName('board')[0]
     const cells = document.querySelectorAll('.cell')
     const undo_btn = document.getElementById('back')
