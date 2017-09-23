@@ -211,7 +211,7 @@ button[disabled] {
     cursor: auto;
 }
 
-button:hover {
+button:hover:enabled {
     background-color: #FF9C41;
     color: #000;
 }
