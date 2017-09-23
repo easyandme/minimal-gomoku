@@ -22,3 +22,17 @@
         transform: translateY(-30px);
     }
 }
+
+@media only screen and (max-width: 420px) {
+    .board {
+        width: 95%;
+        min-width: 280px;
+        margin-bottom: 4px;
+    }
+    button#back {
+        margin-left: 60px;
+    }
+    h3 {
+        font-size: 1em;
+    }
+}

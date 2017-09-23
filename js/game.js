@@ -62,6 +62,7 @@ document.addEventListener("DOMContentLoaded", function() {
             undo_btn.disabled = false
             restart_btn.disabled = false
         }
+        console.log(board_map.getMap())
     }
 
     const unplacePiece = () => {
@@ -73,7 +74,10 @@ document.addEventListener("DOMContentLoaded", function() {
         if (last_color === "black") blackPiece--
         else whitePiece--
         step_text.innerText = currentStep
-        if (currentStep === 0) undo_btn.disabled = true
+        if (currentStep === 0) {
+            undo_btn.disabled = true
+            restart_btn.disabled = true
+        }
         if (board_active === false) {
             board.addEventListener('click', placePiece, true)
             message_text.innerHTML = "&nbsp"
