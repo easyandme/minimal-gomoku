@@ -54,8 +54,7 @@ document.addEventListener("DOMContentLoaded", function() {
             if (board_map.setMap(row, col, color)) {
                 board.removeEventListener('click', placePiece, true)
                 board_active = false
-                let text = board_map.history.pop()[0] === 0 ? "Black Wins" : "White Wins"
-                message_text.innerText = text
+                message_text.innerText = board_map.getHistory()[board_map.history.length - 1][0] === 0 ? "Black Wins" : "White Wins"
             }
         }
         if (currentStep > 0) {
@@ -77,6 +76,7 @@ document.addEventListener("DOMContentLoaded", function() {
         if (board_active === false) {
             board.addEventListener('click', placePiece, true)
             message_text.innerHTML = "&nbsp"
+            board_active = true
         }
     }
 

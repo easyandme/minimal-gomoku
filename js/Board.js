@@ -21,9 +21,10 @@ class Board {
 
     setMap(row, col, color) {
         let c = color === "black"? 0 : 1
-        this.history.push([c, row, col])
+        let step = [c, row, col]
+        this.history.push(step)
         this.map[c][row][col] = 1
-        return this.checkBoard(row, col, c)
+        return Board.checkBoard(this.map, row, col, c)
     }
 
     unsetMap() {
@@ -35,8 +36,12 @@ class Board {
         return this.map
     }
 
-    checkBoard(row, col, c) {
-        return Board.checkRow(this.map[c][row]) || Board.checkCol(this.map[c], col) || Board.checkDiagonal(this.map[c], row, col)
+    getHistory() {
+        return this.history
+    }
+
+    static checkBoard(arr, row, col, c) {
+        return Board.checkRow(arr[c][row]) || Board.checkCol(arr[c], col) || Board.checkDiagonal(arr[c], row, col)
     }
 
     static checkRow(arr, n = 5) {
