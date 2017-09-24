@@ -168,6 +168,8 @@ General styling
 --------------------------------------------------------------*/
 body {
     background-color: #FDF2F2;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
 }
 .content {
     position: relative;

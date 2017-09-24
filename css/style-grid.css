@@ -5,7 +5,7 @@
 
 
 .cell {
-    padding-top: calc(100% - 2px);
+    padding-top: 100%;
     box-sizing: border-box;
     position: relative;
     overflow: hidden;
