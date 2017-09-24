@@ -68,7 +68,6 @@ document.addEventListener("DOMContentLoaded", function() {
             undo_btn.disabled = false
             restart_btn.disabled = false
         }
-        console.log(board_map.getMap())
     }
 
     const unplacePiece = () => {

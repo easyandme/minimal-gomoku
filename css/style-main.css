@@ -229,7 +229,5 @@ input#board-color {
     transition: all 1s;
     -webkit-transition: all 1s;
     border: 1px dotted grey;
-    position: absolute;
     top: calc(30vh + 100px);
-    left: 10vw;
 }
