@@ -20,13 +20,14 @@
     <link rel="stylesheet" href="css/style-grid.css" type="text/css" media="all">
     <link rel="stylesheet" href="css/media.css" type="text/css" media="all">
     <script src="js/lib/fastclick.js"></script>
+    <script src="js/lib/jscolor.min.js"></script>
     <script src="js/Board.js"></script>
 </head>
 <body>
 
 <div class="content">
 
-<div class="board">
+<div class="board" id="board">
 
     <!-- row -->
     <div class="cell top-cell left-cell">
@@ -794,10 +795,21 @@
         <h3>Steps: <br><span id="step">0</span><br><span id="message">&nbsp;</span></h3>
         <button id="back" disabled>Undo</button>
         <button id="restart" disabled>Restart</button>
+        <input id="board-color" class="jscolor {onFineChange:'setBoardColor(this)', value:'fbb35c'}" type="button" value="Board">
     </div>
 
 </div>
 <script src="js/game.js"></script>
+<script>
+    function setBoardColor(picker) {
+        let loaded = document.querySelectorAll('.cell.loaded')
+        let board = document.getElementById('board')
+        loaded.forEach((cell) => {
+            cell.style.backgroundColor = '#' + picker.toString()
+        })
+        board.style.backgroundColor = '#' + picker.toString()
+    }
+</script>
 <!-- Global Site Tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-38451886-12"></script>
 <script>
@@ -807,7 +819,6 @@
 
     gtag('config', 'UA-38451886-12');
 </script>
-
 </body>
 
 </html>

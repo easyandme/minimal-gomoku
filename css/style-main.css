@@ -179,6 +179,8 @@ body {
     width: 80%;
     max-width: 90vh;
     background-color: #fbb35c;
+    transition: all 1.5s ease;
+    -webkit-transition: all 1.5s ease;
 }
 button {
     background-color: #fff;
@@ -216,4 +218,18 @@ h3 {
 }
 h3 > span {
     color: green;
+}
+input#board-color {
+    background-color: #fff;
+    color: green;
+    position: absolute;
+    left:10vw;
+    cursor: pointer;
+    z-index: 9;
+    transition: all 1s;
+    -webkit-transition: all 1s;
+    border: 1px dotted grey;
+    position: absolute;
+    top: calc(30vh + 100px);
+    left: 10vw;
 }

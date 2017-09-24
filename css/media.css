@@ -13,7 +13,7 @@
         margin-left: 120px;
         transform: translateY(-30px);
     }
-    button#restart {
+    button#restart, input#board-color {
         position: relative;
         top: 0;
         left: 0;
