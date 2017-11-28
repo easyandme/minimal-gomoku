@@ -13,11 +13,15 @@ document.addEventListener("DOMContentLoaded", function() {
     const cells = document.querySelectorAll('.cell')
     const undo_btn = document.getElementById('back')
     const restart_btn = document.getElementById('restart')
-    const step_text = document.getElementById('step')
+    const ai_btn = document.querySelector('.ai-button')
+    const ai_text = document.getElementById('ai')
     const message_text = document.getElementById('message')
     let board_map = new Board()
+    let AI_on = ai_text.classList.contains("off")
     let blackPiece = 0, whitePiece = 0
     let currentStep = 0, board_active = true
+    let bw = window.getComputedStyle(board).width
+    board.style.height = bw
 
     setTimeout(function() {
         cells.forEach((cell) => {
@@ -26,8 +30,8 @@ document.addEventListener("DOMContentLoaded", function() {
     }, 1000)
 
     for (let i = 0; i < cells.length; ++i) {
-        cells[i].dataset.row = Math.floor(i / 19)
-        cells[i].dataset.col = i % 19
+        cells[i].dataset.row = Math.floor(i / board_map.getSize())
+        cells[i].dataset.col = i % board_map.getSize()
     }
 
     const createPiece = (width, color, step) => {
@@ -56,47 +60,64 @@ document.addEventListener("DOMContentLoaded", function() {
         if (e.target.classList.contains('cell') && e.target.children.length === 0) {
             let row = parseInt(e.target.dataset.row)
             let col = parseInt(e.target.dataset.col)
+            let pos = {
+                x: row,
+                y: col
+            }
             e.target.appendChild(createPiece(width, color, ++currentStep))
-            step_text.innerText = currentStep
-            if (board_map.setMap(row, col, color)) {
-                board.removeEventListener('click', placePiece, true)
-                board_active = false
-                message_text.innerText = board_map.getHistory()[board_map.history.length - 1][0] === 0 ? "Black Won" : "White Won"
+            if (board_map.setMap(pos, color)) disableBoard()
+            else if (board_map.getAI() !== null) {
+                let AI_pos = {
+                    x: board_map.getAI().x,
+                    y: board_map.getAI().y
+                }
+                if (board_map.setMap(AI_pos, 0)) disableBoard()
+                let AI_cell = document.querySelector('[data-row="' + AI_pos.x + '"][data-col="' + AI_pos.y + '"]')
+                AI_cell.appendChild(createPiece(width, currentStep % 2 === 0 ? "black" : "white", ++currentStep))
             }
         }
         if (currentStep > 0) {
             undo_btn.disabled = false
             restart_btn.disabled = false
         }
-        console.log(board_map.getMap())
     }
 
     const unplacePiece = () => {
-        board_map.unsetMap()
-        let last_piece = document.querySelector('[data-step="' + currentStep + '"]')
-        let last_color = last_piece.dataset.color
-        last_piece.remove()
-        currentStep--
-        if (last_color === "black") blackPiece--
-        else whitePiece--
-        step_text.innerText = currentStep
-        if (currentStep === 0) {
-            undo_btn.disabled = true
-            restart_btn.disabled = true
+        let t = board_map.AI_on ? 2 : 1
+        for (let i = 0; i < t; ++i) {
+            board_map.unsetMap()
+            let last_piece = document.querySelector('[data-step="' + currentStep + '"]')
+            let last_color = last_piece.dataset.color
+            last_piece.remove()
+            currentStep--
+            if (last_color === "black") blackPiece--
+            else whitePiece--
+            if (currentStep === 0) {
+                undo_btn.disabled = true
+                restart_btn.disabled = true
+            }
+            if (board_active === false) {
+                board.addEventListener('click', placePiece, true)
+                message_text.innerHTML = "&nbsp"
+                board_active = true
+            }
         }
-        if (board_active === false) {
-            board.addEventListener('click', placePiece, true)
-            message_text.innerHTML = "&nbsp"
-            board_active = true
-        }
+    }
+
+    const disableBoard = () => {
+        board.removeEventListener('click', placePiece, true)
+        board_active = false
+        message_text.innerText = board_map.getHistory()[board_map.history.length - 1][0] === 0 ? "Black Won" : "White Won"
+        return
     }
 
     const restartBoard = () => {
         currentStep = 0
         whitePiece = 0
         blackPiece = 0
+        AI_on = ai_text.classList.contains("off")
         board_map = new Board()
-        step_text.innerText = currentStep
+        board_map.setAI(!AI_on)
         undo_btn.disabled = true
         restart_btn.disabled = true
         Array.prototype.forEach.call(cells, function(cell) {
@@ -111,5 +132,15 @@ document.addEventListener("DOMContentLoaded", function() {
     board.addEventListener('click', placePiece, true)
     undo_btn.addEventListener('click', unplacePiece, true)
     restart_btn.addEventListener('click', restartBoard, true)
+    ai_btn.addEventListener('click', function () {
+        restartBoard()
+        board_map.setAI(AI_on)
+        ai_text.classList.toggle("off")
+        if (AI_on) {
+            ai_text.innerText = "Man Vs A.I."
+        } else {
+            ai_text.innerText = "Man Vs Man"
+        }
+    }, true)
 
 })
